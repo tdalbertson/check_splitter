@@ -24,10 +24,18 @@ def get_num_of_people():
     while True:
         try:
             total_people = int(input("How many people? "))
-            break
+            if total_people <= 1:
+                clear_screen()
+                print("\nPlease enter more than 1 person.\n")
+            else:
+                break
         except ValueError:
             clear_screen()
             print("\nPlease enter a valid number of people.\n")
+        except ZeroDivisionError:
+            clear_screen()
+            print("\nCannot be 0 people.\n")
+
 
     return total_people
 
