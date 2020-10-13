@@ -5,11 +5,12 @@ A program for splitting a check between multiple people.
 import math
 import os # For clearing terminal screen
 
-# Function Declarations ==================================================
+# ==================== Function Declarations ====================
 def split_check(total, number_of_people):
     return math.ceil(total / number_of_people)
 
 def get_check_total():
+    # Input Validation
     while True:
         try:
             total_of_check = float(input("What is the total of the check? $"))
@@ -44,10 +45,10 @@ def get_num_of_people():
 
     return total_people
 
-def clear_screen():
+def clear_screen(): # For clearing the console screen
     os.system('clear')
 
-# Main Program Flow ==================================================
+# ==================== Main Program Flow ====================
 clear_screen()
 print("This program splits a check depending on the number of people.\n")
 
